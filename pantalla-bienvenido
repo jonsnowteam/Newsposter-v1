@@ -3,35 +3,39 @@
 	<head>
 		<title>Newsposter.net</title>
 		<script type="text/javascript" >
-			window.onload=function(){
-				var elemento = document.getElementById("cabecera");
-				if (elemento && elemento.getContext) {
-					var contexto = elemento.getContext("2d");
-					//resize del canvas para que ocupe toda la ventana
-					if (elemento.width < window.innerWidth){
-						elemento.width = window.innerWidth;
-					}
-					elemento.height = window.innerHeight+800;
-					// dibujos
-					if (contexto) {
-						elemento.width=innerWidth;
-						contexto.fillStyle = "#ffffff";
-						//cabecera
-						contexto.fillRect(0, 0, innerWidth, 70);
-						//cuerpo
-						contexto.fillRect(0, 650, innerWidth, 450);	
-						contexto.fillStyle = "#cccccc";
-						contexto.fillRect(0, 70, innerWidth, 5);
-						contexto.fillStyle = "#014765";		
-						contexto.fillRect(innerWidth-2-150, 10, 2, 50);
-					}
-				}
-				var img = new Image();
-				img.src = 'Register.jpg';
-				img.onload = function(){
-					contexto.drawImage(img,innerWidth-2-380, -10);
-		  		}
+			//la creo en el scope global para poder reutilizarla al redimensionar la ventana
+			var img = new Image();
+			img.src = 'Register.jpg';
+			img.onload = function(){
+				img.loaded=true;
 			}
+			
+			function redimensionarYDibujarCabecera() {
+				var canvas=document.getElementById('cabecera');
+				if (canvas.width < window.innerWidth) canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight+800;
+				if (canvas && canvas.getContext) {
+					var ctx = canvas.getContext("2d");
+					// dibujos
+					if (ctx) {
+						ctx.fillStyle = "#ffffff";
+						//cabecera
+						ctx.fillRect(0, 0, innerWidth, 70);
+						//cuerpo
+						ctx.fillRect(0, 650, innerWidth, 450);	
+						ctx.fillStyle = "#cccccc";
+						ctx.fillRect(0, 70, innerWidth, 5);
+						ctx.fillStyle = "#014765";		
+						ctx.fillRect(innerWidth-2-150, 10, 2, 50);
+					}
+					if(img.loaded) ctx.drawImage(img,innerWidth-2-380, -10);
+					else img.addEventListener('load', function(){ctx.drawImage(img,innerWidth-2-380, -10);})
+				}
+			}
+
+			// resize the canvas to fill browser window dynamically
+			window.addEventListener('resize', redimensionarYDibujarCabecera);
+			window.addEventListener('load', redimensionarYDibujarCabecera);
 		</script>
 	</head>
 	<body>
