@@ -46,13 +46,19 @@ window.onload = function () {
 		}
 	}	
 	
-	// mira aca
+
 	
   var img = new Image();
   img.src = 'Register.jpg';
   img.onload = function(){
 
-		contexto.drawImage(img,innerWidth-2-400, -5);
+		contexto.drawImage(img,innerWidth-2-380, -10);
+  }
+  var img2 = new Image();
+  img2.src = 'IconoBusqueda.jpg';
+  img2.onload = function(){
+
+		contexto.drawImage(img2,innerWidth-2-130, 15);
   }
 
 
