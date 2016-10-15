@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/</title><link rel="stylesheet" type="text/css" href="http:_knightlab.northwestern.edu_2014_06_05_five-mini-programming-projects-for-the-python-beginner__files/viewsource.css"></head><body id="viewsource" class="highlight" style="-moz-tab-size: 4" contextmenu="actions"><pre id="line1"><span></span><span class="doctype">&lt;!doctype html&gt;</span><span>
+<span id="line2"></span></span><span class="comment">&lt;!--[if !IE]&gt;      &lt;html class="no-js non-ie" lang="en-US"&gt; &lt;![endif]--&gt;</span><span>
+<span id="line3"></span></span><span class="comment">&lt;!--[if IE 7 ]&gt;    &lt;html class="no-js ie7" lang="en-US"&gt; &lt;![endif]--&gt;</span><span>
+<span id="line4"></span></span><span class="comment">&lt;!--[if IE 8 ]&gt;    &lt;html class="no-js ie8" lang="en-US"&gt; &lt;![endif]--&gt;</span><span>
+<span id="line5"></span></span><span class="comment">&lt;!--[if IE 9 ]&gt;    &lt;html class="no-js ie9" lang="en-US"&gt; &lt;![endif]--&gt;</span><span>
+<span id="line6"></span></span><span class="comment">&lt;!--[if gt IE 9]&gt;&lt;!--&gt;</span><span> </span><span>&lt;<span class="start-tag">html</span> <span class="attribute-name">class</span>="<a class="attribute-value">no-js</a>" <span class="attribute-name">lang</span>="<a class="attribute-value">en-US</a>"&gt;</span><span> </span><span class="comment">&lt;!--&lt;![endif]--&gt;</span><span>
+<span id="line7"></span></span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
+<span id="line8"></span>
+<span id="line9"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">charset</span>="<a class="attribute-value">UTF-8</a>" <span>/</span>&gt;</span><span>
+<span id="line10"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">viewport</a>" <span class="attribute-name">content</span>="<a class="attribute-value">width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0</a>"&gt;</span><span>
+<span id="line11"></span></span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>Five mini programming projects for the Python beginner <span class="entity"><span>&amp;</span>#124;</span> Knight Lab | Northwestern University</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
+<span id="line12"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">http-equiv</span>="<a class="attribute-value">imagetoolbar</a>" <span class="attribute-name">content</span>="<a class="attribute-value">false</a>"&gt;</span><span>
+<span id="line13"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">MSSmartTagsPreventParsing</a>" <span class="attribute-name">content</span>="<a class="attribute-value">true</a>"&gt;</span><span>
+<span id="line14"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">robots</a>" <span class="attribute-name">content</span>="<a class="attribute-value">index</a>"&gt;</span><span>
+<span id="line15"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">robots</a>" <span class="attribute-name">content</span>="<a class="attribute-value">follow</a>"&gt;</span><span>
+<span id="line16"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">robots</a>" <span class="attribute-name">content</span>="<a class="attribute-value">all</a>"&gt;</span><span>
+<span id="line17"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">revisit-after</a>" <span class="attribute-name">content</span>="<a class="attribute-value">7 days</a>"&gt;</span><span>
+<span id="line18"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">language</a>" <span class="attribute-name">content</span>="<a class="attribute-value">en-us</a>"&gt;</span><span>
+<span id="line19"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">keywords</a>" <span class="attribute-name">content</span>="<a class="attribute-value">Technology,
+ Journalism, News, Innovation, Knight Lab, KnightLab, Northwestern, open
+ source, news innovation, news media, Medill, McCormick, Knight 
+Foundation</a>"&gt;</span><span>
+<span id="line20"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">description</a>" <span class="attribute-name">content</span>="<a class="attribute-value">Northwestern
+ University Knight Lab is a team of technologists and journalists 
+working at advancing news media innovation through exploration and 
+experimentation.</a>"&gt;</span><span>
+<span id="line21"></span></span><span class="error error" title="No space between attributes.
+Saw “&lt;” when expecting an attribute name. Probable cause: Missing “&gt;” immediately before.">&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">profile</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://gmpg.org/xfn/11">http://gmpg.org/xfn/11</a>"<span class="attribute-name">&lt;link</span> <span class="attribute-name error" title="Duplicate attribute.">rel</span>="<a class="attribute-value">pingback</a>" <span class="attribute-name error" title="Duplicate attribute.">href</span>="<a class="attribute-value">http://knightlab.northwestern.edu/xmlrpc.php</a>" <span>/</span>&gt;</span><span>
+<span id="line22"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">shortcut icon</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/themes/responsive-kl-child-theme/favicon.ico">http://knightlab.northwestern.edu/wp-content/themes/responsive-kl-child-theme/favicon.ico</a>" <span>/</span>&gt;</span><span>
+<span id="line23"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://cloud.webtype.com/css/d4767ecb-457a-4677-8761-72f890add836.css">//cloud.webtype.com/css/d4767ecb-457a-4677-8761-72f890add836.css</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text/css</a>" <span>/</span>&gt;</span><span>
+<span id="line24"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">dns-prefetch</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://s0.wp.com/">//s0.wp.com</a>' <span>/</span>&gt;</span><span>
+<span id="line25"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">dns-prefetch</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://s.gravatar.com/">//s.gravatar.com</a>' <span>/</span>&gt;</span><span>
+<span id="line26"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">dns-prefetch</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://s.w.org/">//s.w.org</a>' <span>/</span>&gt;</span><span>
+<span id="line27"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">alternate</a>" <span class="attribute-name">type</span>="<a class="attribute-value">application/rss+xml</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab <span class="entity"><span>&amp;</span>raquo;</span> Feed</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/feed/">http://knightlab.northwestern.edu/feed/</a>" <span>/</span>&gt;</span><span>
+<span id="line28"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">alternate</a>" <span class="attribute-name">type</span>="<a class="attribute-value">application/rss+xml</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab <span class="entity"><span>&amp;</span>raquo;</span> Comments Feed</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/comments/feed/">http://knightlab.northwestern.edu/comments/feed/</a>" <span>/</span>&gt;</span><span>
+<span id="line29"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">alternate</a>" <span class="attribute-name">type</span>="<a class="attribute-value">application/rss+xml</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab <span class="entity"><span>&amp;</span>raquo;</span> Five mini programming projects for the Python beginner Comments Feed</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/feed/">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/feed/</a>" <span>/</span>&gt;</span><span>
+<span id="line30"></span>		</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line31"></span>			window._wpemojiSettings = 
+{"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/knightlab.northwestern.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+<span id="line32"></span>			!function(a,b,c){function d(a){var 
+c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&amp;&amp;h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600
+ 32px Arial",a){case"flag":return 
+i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length</span><span>&lt;3</span><span>e3)&amp;&amp;(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return
+ 
+i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return
+ 
+i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return
+ 
+i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return
+ 
+i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function
+ e(a){var 
+c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var
+ 
+f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h</span><span>&lt;i</span><span>.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&amp;&amp;c.supports[i[h]],"flag"!==i[h]&amp;&amp;(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&amp;&amp;c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&amp;&amp;!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&amp;&amp;c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&amp;&amp;f.twemoji&amp;&amp;(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+<span id="line33"></span>		</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line34"></span>		</span><span>&lt;<span class="start-tag">style</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/css</a>"&gt;</span><span>
+<span id="line35"></span>img.wp-smiley,
+<span id="line36"></span>img.emoji {
+<span id="line37"></span>	display: inline !important;
+<span id="line38"></span>	border: none !important;
+<span id="line39"></span>	box-shadow: none !important;
+<span id="line40"></span>	height: 1em !important;
+<span id="line41"></span>	width: 1em !important;
+<span id="line42"></span>	margin: 0 .07em !important;
+<span id="line43"></span>	vertical-align: -0.1em !important;
+<span id="line44"></span>	background: none !important;
+<span id="line45"></span>	padding: 0 !important;
+<span id="line46"></span>}
+<span id="line47"></span></span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span>
+<span id="line48"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span class="attribute-name">id</span>='<a class="attribute-value">theme-main-css</a>'  <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/themes/responsive-kl-child-theme?ver=4.6.1">http://knightlab.northwestern.edu/wp-content/themes/responsive-kl-child-theme?ver=4.6.1</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>' <span class="attribute-name">media</span>='<a class="attribute-value">all</a>' <span>/</span>&gt;</span><span>
+<span id="line49"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span class="attribute-name">id</span>='<a class="attribute-value">responsive-style-css</a>'  <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/themes/responsive-kl-child-theme/style.css?ver=1.8.4">http://knightlab.northwestern.edu/wp-content/themes/responsive-kl-child-theme/style.css?ver=1.8.4</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>' <span class="attribute-name">media</span>='<a class="attribute-value">all</a>' <span>/</span>&gt;</span><span>
+<span id="line50"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span class="attribute-name">id</span>='<a class="attribute-value">social-logos-css</a>'  <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1">http://knightlab.northwestern.edu/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>' <span class="attribute-name">media</span>='<a class="attribute-value">all</a>' <span>/</span>&gt;</span><span>
+<span id="line51"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span class="attribute-name">id</span>='<a class="attribute-value">jetpack_css-css</a>'  <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1">http://knightlab.northwestern.edu/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.1</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>' <span class="attribute-name">media</span>='<a class="attribute-value">all</a>' <span>/</span>&gt;</span><span>
+<span id="line52"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span class="attribute-name">id</span>='<a class="attribute-value">multilevelnav_style-css</a>'  <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/?mlnmenu=css&amp;ver=4.6.1">http://knightlab.northwestern.edu/?mlnmenu=css<span class="entity"><span>&amp;</span>#038;</span>ver=4.6.1</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>' <span class="attribute-name">media</span>='<a class="attribute-value">all</a>' <span>/</span>&gt;</span><span>
+<span id="line53"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span class="attribute-name">id</span>='<a class="attribute-value">SZArchiveWidget_style-css</a>'  <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/norman-advanced-archive-widget/styles.css?ver=4.6.1">http://knightlab.northwestern.edu/wp-content/plugins/norman-advanced-archive-widget/styles.css?ver=4.6.1</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>' <span class="attribute-name">media</span>='<a class="attribute-value">all</a>' <span>/</span>&gt;</span><span>
+<span id="line54"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4">http://knightlab.northwestern.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line55"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1">http://knightlab.northwestern.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line56"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>'&gt;</span><span>
+<span id="line57"></span>/* </span><span>&lt;!</span><span>[CDATA[ */
+<span id="line58"></span>var related_posts_js_options = {"post_heading":"h4"};
+<span id="line59"></span>/* ]]&gt; */
+<span id="line60"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line61"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/jetpack/modules/related-posts/related-posts.js?ver=20150408">http://knightlab.northwestern.edu/wp-content/plugins/jetpack/modules/related-posts/related-posts.js?ver=20150408</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line62"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/norman-advanced-archive-widget/script.js?ver=4.6.1">http://knightlab.northwestern.edu/wp-content/plugins/norman-advanced-archive-widget/script.js?ver=4.6.1</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line63"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/themes/responsive/js/responsive-modernizr.js?ver=2.6.1">http://knightlab.northwestern.edu/wp-content/themes/responsive/js/responsive-modernizr.js?ver=2.6.1</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line64"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/multi-level-navigation-plugin/scripts/superfish.js?ver=1.4.8">http://knightlab.northwestern.edu/wp-content/plugins/multi-level-navigation-plugin/scripts/superfish.js?ver=1.4.8</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line65"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">https://api.w.org/</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-json/">http://knightlab.northwestern.edu/wp-json/</a>' <span>/</span>&gt;</span><span>
+<span id="line66"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">EditURI</a>" <span class="attribute-name">type</span>="<a class="attribute-value">application/rsd+xml</a>" <span class="attribute-name">title</span>="<a class="attribute-value">RSD</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/xmlrpc.php?rsd">http://knightlab.northwestern.edu/xmlrpc.php?rsd</a>" <span>/</span>&gt;</span><span>
+<span id="line67"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">wlwmanifest</a>" <span class="attribute-name">type</span>="<a class="attribute-value">application/wlwmanifest+xml</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-includes/wlwmanifest.xml">http://knightlab.northwestern.edu/wp-includes/wlwmanifest.xml</a>" <span>/</span>&gt;</span><span> 
+<span id="line68"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">prev</a>' <span class="attribute-name">title</span>='<a class="attribute-value">Learning more about twXplorer<span class="entity"><span>&amp;</span>#8217;</span>s potential and pitfalls through user testing</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/04/learning-more-about-twxplorers-potential-and-pitfalls-through-user-testing/">http://knightlab.northwestern.edu/2014/06/04/learning-more-about-twxplorers-potential-and-pitfalls-through-user-testing/</a>' <span>/</span>&gt;</span><span>
+<span id="line69"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">next</a>' <span class="attribute-name">title</span>='<a class="attribute-value">Six social search tools to help journalists find and analyze trends on Twitter</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/09/six-social-search-tools-to-help-journalists-find-and-analyze-trends-on-twitter/">http://knightlab.northwestern.edu/2014/06/09/six-social-search-tools-to-help-journalists-find-and-analyze-trends-on-twitter/</a>' <span>/</span>&gt;</span><span>
+<span id="line70"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">generator</a>" <span class="attribute-name">content</span>="<a class="attribute-value">WordPress 4.6.1</a>" <span>/</span>&gt;</span><span>
+<span id="line71"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">canonical</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/</a>" <span>/</span>&gt;</span><span>
+<span id="line72"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">shortlink</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://wp.me/p7FfHR-1sm">http://wp.me/p7FfHR-1sm</a>' <span>/</span>&gt;</span><span>
+<span id="line73"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">alternate</a>" <span class="attribute-name">type</span>="<a class="attribute-value">application/json+oembed</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fknightlab.northwestern.edu%2F2014%2F06%2F05%2Ffive-mini-programming-projects-for-the-python-beginner%2F">http://knightlab.northwestern.edu/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fknightlab.northwestern.edu%2F2014%2F06%2F05%2Ffive-mini-programming-projects-for-the-python-beginner%2F</a>" <span>/</span>&gt;</span><span>
+<span id="line74"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">alternate</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text/xml+oembed</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fknightlab.northwestern.edu%2F2014%2F06%2F05%2Ffive-mini-programming-projects-for-the-python-beginner%2F&amp;format=xml">http://knightlab.northwestern.edu/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fknightlab.northwestern.edu%2F2014%2F06%2F05%2Ffive-mini-programming-projects-for-the-python-beginner%2F<span class="entity"><span>&amp;</span>#038;</span>format=xml</a>" <span>/</span>&gt;</span><span>
+<span id="line75"></span>
+<span id="line76"></span></span><span class="comment">&lt;!-- Multi-level Navigation Plugin v2.3.6 by Ryan Hellyer ... https://geek.hellyer.kiwi/multi-level-navigation/ --&gt;</span><span>
+<span id="line77"></span></span><span class="comment">&lt;!--[if lte IE 
+7]&gt;&lt;script type="text/javascript" 
+src="http://knightlab.northwestern.edu/wp-content/plugins/multi-level-navigation-plugin/scripts/suckerfish_ie.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;</span><span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>jQuery(document).ready(function() {
+<span id="line78"></span>	jQuery("ul.sf-menu").superfish({
+<span id="line79"></span>		animation:     {opacity:"show",height:"show"},  // fade-in and slide-down animation
+<span id="line80"></span>		delay:        0,                            // delay on mouseout
+<span id="line81"></span>		speed:        "normal",  // animation speed
+<span id="line82"></span>		autoArrows:   "",  // enable generation of arrow mark-up
+<span id="line83"></span>		dropShadows:  ""  // enable drop shadows
+<span id="line84"></span>	});
+<span id="line85"></span>});
+<span id="line86"></span>/**
+<span id="line87"></span>* hoverIntent is similar to jQuery's built-in "hover" function except that
+<span id="line88"></span>* instead of firing the onMouseOver event immediately, hoverIntent checks
+<span id="line89"></span>* to see if the user's mouse has slowed down (beneath the sensitivity
+<span id="line90"></span>* threshold) before firing the onMouseOver event.
+<span id="line91"></span>*
+<span id="line92"></span>* hoverIntent r5 // 2007.03.27 // jQuery 1.1.2+
+<span id="line93"></span>* </span><span>&lt;h</span><span>ttp://cherne.net/brian/resources/jquery.hoverIntent.html&gt;
+<span id="line94"></span>*
+<span id="line95"></span>* hoverIntent is currently available for use in all personal or commercial
+<span id="line96"></span>* projects under both MIT and GPL licenses. This means that you can choose
+<span id="line97"></span>* the license that best suits your project, and use it accordingly.
+<span id="line98"></span>*
+<span id="line99"></span>* // basic usage (just like .hover) receives onMouseOver and onMouseOut functions
+<span id="line100"></span>* $("ul li").hoverIntent( showNav , hideNav );
+<span id="line101"></span>*
+<span id="line102"></span>* // advanced usage receives configuration object only
+<span id="line103"></span>* $("ul li").hoverIntent({
+<span id="line104"></span>*	sensitivity: 7, // number = sensitivity threshold (must be 1 or higher)
+<span id="line105"></span>*	interval: 100,   // number = milliseconds of polling interval
+<span id="line106"></span>*	over: showNav,  // function = onMouseOver callback (required)
+<span id="line107"></span>*	timeout: 0,   // number = milliseconds delay before onMouseOut function call
+<span id="line108"></span>*	out: hideNav    // function = onMouseOut callback (required)
+<span id="line109"></span>* });
+<span id="line110"></span>*
+<span id="line111"></span>* @param  f  onMouseOver function || An object with configuration options
+<span id="line112"></span>* @param  g  onMouseOut function  || Nothing (use configuration options object)
+<span id="line113"></span>* @author    Brian Cherne </span><span>&lt;b</span><span>rian@cherne.net&gt;
+<span id="line114"></span>*/
+<span id="line115"></span>(function($) {
+<span id="line116"></span>	$.fn.hoverIntent = function(f,g) {
+<span id="line117"></span>		// default configuration options
+<span id="line118"></span>		var cfg = {
+<span id="line119"></span>			sensitivity: 10,
+<span id="line120"></span>			interval: 200,
+<span id="line121"></span>			timeout: 0
+<span id="line122"></span>		};
+<span id="line123"></span>		// override configuration options with user supplied object
+<span id="line124"></span>		cfg = $.extend(cfg, g ? { over: f, out: g } : f );
+<span id="line125"></span>
+<span id="line126"></span>		// instantiate variables
+<span id="line127"></span>		// cX, cY = current X and Y position of mouse, updated by mousemove event
+<span id="line128"></span>		// pX, pY = previous X and Y position of mouse, set by mouseover and polling interval
+<span id="line129"></span>		var cX, cY, pX, pY;
+<span id="line130"></span>
+<span id="line131"></span>		// A private function for getting mouse position
+<span id="line132"></span>		var track = function(ev) {
+<span id="line133"></span>			cX = ev.pageX;
+<span id="line134"></span>			cY = ev.pageY;
+<span id="line135"></span>		};
+<span id="line136"></span>
+<span id="line137"></span>		// A private function for comparing current and previous mouse position
+<span id="line138"></span>		var compare = function(ev,ob) {
+<span id="line139"></span>			ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
+<span id="line140"></span>			// compare mouse positions to see if they've crossed the threshold
+<span id="line141"></span>			if ( ( Math.abs(pX-cX) + Math.abs(pY-cY) ) </span><span>&lt; </span><span>cfg.sensitivity ) {
+<span id="line142"></span>				$(ob).unbind("mousemove",track);
+<span id="line143"></span>				// set hoverIntent state to true (so mouseOut can be called)
+<span id="line144"></span>				ob.hoverIntent_s = 1;
+<span id="line145"></span>				return cfg.over.apply(ob,[ev]);
+<span id="line146"></span>			} else {
+<span id="line147"></span>				// set previous coordinates for next time
+<span id="line148"></span>				pX = cX; pY = cY;
+<span id="line149"></span>				// use self-calling timeout, guarantees intervals are spaced out properly (avoids JavaScript timer bugs)
+<span id="line150"></span>				ob.hoverIntent_t = setTimeout( function(){compare(ev, ob);} , cfg.interval );
+<span id="line151"></span>			}
+<span id="line152"></span>		};
+<span id="line153"></span>
+<span id="line154"></span>		// A private function for delaying the mouseOut function
+<span id="line155"></span>		var delay = function(ev,ob) {
+<span id="line156"></span>			ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t);
+<span id="line157"></span>			ob.hoverIntent_s = 0;
+<span id="line158"></span>			return cfg.out.apply(ob,[ev]);
+<span id="line159"></span>		};
+<span id="line160"></span>
+<span id="line161"></span>		// A private function for handling mouse 'hovering'
+<span id="line162"></span>		var handleHover = function(e) {
+<span id="line163"></span>			// next three lines copied from jQuery.hover, ignore children onMouseOver/onMouseOut
+<span id="line164"></span>			var p = (e.type == "mouseover" ? e.fromElement : e.toElement) || e.relatedTarget;
+<span id="line165"></span>			while ( p &amp;&amp; p != this ) { try { p = p.parentNode; } catch(e) { p = this; } }
+<span id="line166"></span>			if ( p == this ) { return false; }
+<span id="line167"></span>
+<span id="line168"></span>			// copy objects to be passed into t (required for event object to be passed in IE)
+<span id="line169"></span>			var ev = jQuery.extend({},e);
+<span id="line170"></span>			var ob = this;
+<span id="line171"></span>
+<span id="line172"></span>			// cancel hoverIntent timer if it exists
+<span id="line173"></span>			if (ob.hoverIntent_t) { ob.hoverIntent_t = clearTimeout(ob.hoverIntent_t); }
+<span id="line174"></span>
+<span id="line175"></span>			// else e.type == "onmouseover"
+<span id="line176"></span>			if (e.type == "mouseover") {
+<span id="line177"></span>				// set "previous" X and Y position based on initial entry point
+<span id="line178"></span>				pX = ev.pageX; pY = ev.pageY;
+<span id="line179"></span>				// update "current" X and Y position based on mousemove
+<span id="line180"></span>				$(ob).bind("mousemove",track);
+<span id="line181"></span>				// start polling interval (self-calling timeout) to compare mouse coordinates over time
+<span id="line182"></span>				if (ob.hoverIntent_s != 1) { ob.hoverIntent_t = setTimeout( function(){compare(ev,ob);} , cfg.interval );}
+<span id="line183"></span>
+<span id="line184"></span>			// else e.type == "onmouseout"
+<span id="line185"></span>			} else {
+<span id="line186"></span>				// unbind expensive mousemove event
+<span id="line187"></span>				$(ob).unbind("mousemove",track);
+<span id="line188"></span>				// if hoverIntent state is true, then call the mouseOut function after the specified delay
+<span id="line189"></span>				if (ob.hoverIntent_s == 1) { ob.hoverIntent_t = setTimeout( function(){delay(ev,ob);} , cfg.timeout );}
+<span id="line190"></span>			}
+<span id="line191"></span>		};
+<span id="line192"></span>
+<span id="line193"></span>		// bind the function to the two event listeners
+<span id="line194"></span>		return this.mouseover(handleHover).mouseout(handleHover);
+<span id="line195"></span>	};
+<span id="line196"></span>})(jQuery);
+<span id="line197"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>		</span><span>&lt;<span class="start-tag">style</span>&gt;</span><span>
+<span id="line198"></span>		.gist table {
+<span id="line199"></span>			margin-bottom: 0 !important;
+<span id="line200"></span>		}
+<span id="line201"></span>		.gist .line-numbers
+<span id="line202"></span>		{
+<span id="line203"></span>			width: 4em !important;
+<span id="line204"></span>		}
+<span id="line205"></span>		.gist .line,
+<span id="line206"></span>		.gist .line-number
+<span id="line207"></span>		{
+<span id="line208"></span>			font-size: 12px !important;
+<span id="line209"></span>			height: 18px !important;
+<span id="line210"></span>			line-height: 18px !important;
+<span id="line211"></span>		}
+<span id="line212"></span>		.gist .line
+<span id="line213"></span>		{
+<span id="line214"></span>			white-space: pre !important;
+<span id="line215"></span>			width: auto !important;
+<span id="line216"></span>			word-wrap: normal !important;
+<span id="line217"></span>		}
+<span id="line218"></span>		.gist .line span
+<span id="line219"></span>		{
+<span id="line220"></span>			word-wrap: normal !important;
+<span id="line221"></span>		}
+<span id="line222"></span>		</span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span>
+<span id="line223"></span>		
+<span id="line224"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">dns-prefetch</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://v0.wordpress.com/">//v0.wordpress.com</a>'&gt;</span><span>
+<span id="line225"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">dns-prefetch</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://i0.wp.com/">//i0.wp.com</a>'&gt;</span><span>
+<span id="line226"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">dns-prefetch</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://i1.wp.com/">//i1.wp.com</a>'&gt;</span><span>
+<span id="line227"></span></span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>='<a class="attribute-value">dns-prefetch</a>' <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://i2.wp.com/">//i2.wp.com</a>'&gt;</span><span>
+<span id="line228"></span></span><span>&lt;<span class="start-tag">style</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>'&gt;</span><span>img#wpstats{display:none}</span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span></span><span class="comment">&lt;!-- We need this for debugging --&gt;</span><span>
+<span id="line229"></span></span><span class="comment">&lt;!-- Responsive 1.8.4.1 --&gt;</span><span>
+<span id="line230"></span></span><span class="comment">&lt;!-- Responsive Child Theme 1.0 --&gt;</span><span>
+<span id="line231"></span>
+<span id="line232"></span></span><span class="comment">&lt;!-- Dynamic Widgets by QURL - http://www.qurl.nl //--&gt;</span><span>
+<span id="line233"></span>
+<span id="line234"></span></span><span class="comment">&lt;!-- Jetpack Open Graph Tags --&gt;</span><span>
+<span id="line235"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:type</a>" <span class="attribute-name">content</span>="<a class="attribute-value">article</a>" <span>/</span>&gt;</span><span>
+<span id="line236"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:title</a>" <span class="attribute-name">content</span>="<a class="attribute-value">Five mini programming projects for the Python beginner</a>" <span>/</span>&gt;</span><span>
+<span id="line237"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:url</a>" <span class="attribute-name">content</span>="<a class="attribute-value">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/</a>" <span>/</span>&gt;</span><span>
+<span id="line238"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:description</a>" <span class="attribute-name">content</span>="<a class="attribute-value">After
+ Shelly wrote this post, Webucator, a company that provides Python 
+training, volunteered to create solutions for these projects. They<span class="entity"><span>&amp;</span>#8217;</span>ve made a series of videos that<span class="entity"><span>&amp;</span>#8217;</span>ll help you ou…</a>" <span>/</span>&gt;</span><span>
+<span id="line239"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">article:published_time</a>" <span class="attribute-name">content</span>="<a class="attribute-value">2014-06-05T16:39:01+00:00</a>" <span>/</span>&gt;</span><span>
+<span id="line240"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">article:modified_time</a>" <span class="attribute-name">content</span>="<a class="attribute-value">2015-07-30T22:11:17+00:00</a>" <span>/</span>&gt;</span><span>
+<span id="line241"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:site_name</a>" <span class="attribute-name">content</span>="<a class="attribute-value">Knight Lab</a>" <span>/</span>&gt;</span><span>
+<span id="line242"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:image</a>" <span class="attribute-name">content</span>="<a class="attribute-value">https://s0.wp.com/i/blank.jpg</a>" <span>/</span>&gt;</span><span>
+<span id="line243"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:locale</a>" <span class="attribute-name">content</span>="<a class="attribute-value">en_US</a>" <span>/</span>&gt;</span><span>
+<span id="line244"></span></span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">twitter:card</a>" <span class="attribute-name">content</span>="<a class="attribute-value">summary</a>" <span>/</span>&gt;</span><span>
+<span id="line245"></span></span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
+<span id="line246"></span></span><span>&lt;<span class="start-tag">body</span> <span class="attribute-name">class</span>="<a class="attribute-value">single single-post postid-5602 single-format-standard</a>"&gt;</span><span>
+<span id="line247"></span>  </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">content-wrapper</a>"&gt;</span><span>
+<span id="line248"></span>  </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">container</a>" <span class="attribute-name">class</span>="<a class="attribute-value">hfeed</a>"&gt;</span><span>
+<span id="line249"></span>    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">info</a>"&gt;</span><span>
+<span id="line250"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">extended</a>"&gt;</span><span>A
+ Northwestern University joint initiative of Medill School of 
+Journalism, Media, Integrated Marketing Communications and the Robert R.
+ McCormick School of Engineering <span class="entity"><span>&amp;</span>amp;</span> Applied Science.</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line251"></span>
+<span id="line252"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">short</a>"&gt;</span><span>Northwestern University joint initiative of </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.medill.northwestern.edu/">http://www.medill.northwestern.edu/</a>"&gt;</span><span>Medill</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> <span class="entity"><span>&amp;</span>amp;</span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.mccormick.northwestern.edu/">http://www.mccormick.northwestern.edu/</a>"&gt;</span><span>McCormick School of Engineering</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>.</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line253"></span>    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line254"></span>    		</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">header</a>" <span class="attribute-name">class</span>="<a class="attribute-value">secondary-page</a>"&gt;</span><span>
+<span id="line255"></span>			</span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/">http://knightlab.northwestern.edu/</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">img</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/uploads/2013/03/Northwestern_University_KnightLab_Logo1.png">http://knightlab.northwestern.edu/wp-content/uploads/2013/03/Northwestern_University_KnightLab_Logo1.png</a>" <span class="attribute-name">id</span>="<a class="attribute-value">mobile-logo</a>" <span>/</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line256"></span>			</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">nav-wrapper</a>" <span class="attribute-name">class</span>="<a class="attribute-value">shrunk</a>"&gt;</span><span>
+<span id="line257"></span>				</span><span>&lt;<span class="start-tag">nav</span>&gt;</span><span>
+<span id="line258"></span>				</span><span>&lt;<span class="start-tag">i</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-align-justify icon-large</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">i</span>&gt;</span><span>
+<span id="line259"></span>														</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">homepage-logo</a>"&gt;</span><span>
+<span id="line260"></span>					</span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/">http://knightlab.northwestern.edu/</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">img</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/uploads/2013/03/Northwestern_University_KnightLab_Logo1.png">http://knightlab.northwestern.edu/wp-content/uploads/2013/03/Northwestern_University_KnightLab_Logo1.png</a>" <span class="attribute-name">id</span>="<a class="attribute-value">large-logo</a>" <span>/</span>&gt;</span><span></span><span>&lt;<span class="start-tag">img</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu//wp-content/themes/responsive-kl-child-theme/images/kl_diamond.png">http://knightlab.northwestern.edu//wp-content/themes/responsive-kl-child-theme/images/kl_diamond.png</a>" <span class="attribute-name">id</span>="<a class="attribute-value">diamond-only</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line261"></span>				</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of #logo --&gt;</span><span>
+<span id="line262"></span>			
+<span id="line263"></span>							</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">grid col-540 function_exists sidenav</a>"&gt;</span><span>
+<span id="line264"></span>					</span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">class</span>="<a class="attribute-value">social contact-icons</a>"&gt;</span><span>
+<span id="line265"></span>						</span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">follow @knightlab on twitter</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.twitter.com/knightlab">http://www.twitter.com/knightlab</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">i</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-twitter</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">i</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line266"></span>						</span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab on Facebook</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.facebook.com/knightlab">https://www.facebook.com/knightlab</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">i</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-facebook</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">i</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line267"></span>						</span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">title</span>="<a class="attribute-value">email Knight Lab</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="mailto:Knightlab@northwestern.edu">mailto:Knightlab@northwestern.edu</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">i</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-envelope</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">i</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line268"></span>						</span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab on github</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://github.com/NUKnightLab/">https://github.com/NUKnightLab/</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">i</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-github</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">i</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line269"></span>					</span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line270"></span>				    
+<span id="line271"></span>					</span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">id</span>="<a class="attribute-value">menu-nav</a>" <span class="attribute-name">class</span>="<a class="attribute-value">menu</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">id</span>="<a class="attribute-value">menu-item-2051</a>" <span class="attribute-name">class</span>="<a class="attribute-value">menu-item menu-item-type-post_type menu-item-object-page menu-item-2051</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/news/">http://knightlab.northwestern.edu/news/</a>"&gt;</span><span>Blog</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line272"></span></span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">id</span>="<a class="attribute-value">menu-item-2045</a>" <span class="attribute-name">class</span>="<a class="attribute-value">menu-item menu-item-type-post_type menu-item-object-page menu-item-2045</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/about/">http://knightlab.northwestern.edu/about/</a>"&gt;</span><span>About Us</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line273"></span></span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">id</span>="<a class="attribute-value">menu-item-8005</a>" <span class="attribute-name">class</span>="<a class="attribute-value">menu-item menu-item-type-post_type menu-item-object-page menu-item-8005</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/projects/">http://knightlab.northwestern.edu/projects/</a>"&gt;</span><span>Projects</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line274"></span></span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">id</span>="<a class="attribute-value">menu-item-2042</a>" <span class="attribute-name">class</span>="<a class="attribute-value">menu-item menu-item-type-post_type menu-item-object-page menu-item-2042</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/events/">http://knightlab.northwestern.edu/events/</a>"&gt;</span><span>Events</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line275"></span></span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line276"></span>									</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line277"></span>				</span><span>&lt;/<span class="end-tag">nav</span>&gt;</span><span>
+<span id="line278"></span>			</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- nav-wrapper --&gt;</span><span>
+<span id="line279"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of #header --&gt;</span><span>
+<span id="line280"></span>
+<span id="line281"></span>    	
+<span id="line282"></span>    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">wrapper</a>" <span class="attribute-name">class</span>="<a class="attribute-value">clearfix</a>"&gt;</span><span>
+<span id="line283"></span>	    
+<span id="line284"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">content</a>" <span class="attribute-name">class</span>="<a class="attribute-value">grid col-1100</a>"&gt;</span><span>
+<span id="line285"></span>
+<span id="line286"></span>
+<span id="line287"></span>		
+<span id="line288"></span>        		                    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">post-5602</a>" <span class="attribute-name">class</span>="<a class="attribute-value">post-5602 post type-post status-publish format-standard hentry category-a-thought tag-learn tag-python wpautop</a>"&gt;</span><span>
+<span id="line289"></span>                </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">post-meta meta-top meta-top</a>"&gt;</span><span>
+<span id="line290"></span>                    </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/category/a-thought/">http://knightlab.northwestern.edu/category/a-thought/</a>"&gt;</span><span>Ideas</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">divider</a>"&gt;</span><span>|</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>  </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">class</span>="<a class="attribute-value">posted</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">4:39 pm</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">bookmark</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">timestamp</a>"&gt;</span><span>June 5, 2014</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>                 </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of .post-meta --&gt;</span><span>
+<span id="line291"></span>                </span><span>&lt;<span class="start-tag">h1</span> <span class="attribute-name">class</span>="<a class="attribute-value">post-title</a>"&gt;</span><span>Five mini programming projects for the Python beginner</span><span>&lt;/<span class="end-tag">h1</span>&gt;</span><span>
+<span id="line292"></span>
+<span id="line293"></span>                </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">post-meta meta-bottom</a>"&gt;</span><span>
+<span id="line294"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">meta-prep meta-prep-author</a>"&gt;</span><span>Posted on</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">class</span>="<a class="attribute-value">posted</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">4:39 pm</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">bookmark</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">timestamp</a>"&gt;</span><span>June 5, 2014</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">meta-sep</a>"&gt;</span><span>Posted by</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/author/shellytan/">http://knightlab.northwestern.edu/author/shellytan/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Posts by Shelly Tan</a>" <span class="attribute-name">class</span>="<a class="attribute-value">author url fn</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">author</a>"&gt;</span><span>Shelly Tan</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line295"></span>				                            </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">comments-link</a>"&gt;</span><span>
+<span id="line296"></span>                        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">mdash</a>"&gt;</span><span><span class="entity"><span>&amp;</span>mdash;</span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line297"></span>                    </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/#comments">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/#comments</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">dsq-postid</a>" <span class="attribute-name">data-dsqidentifier</span>="<a class="attribute-value">5602 http://knightlab.northwestern.edu/?p=5602</a>"&gt;</span><span>19 Comments</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>                        </span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line298"></span>                                    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of .post-meta --&gt;</span><span>
+<span id="line299"></span>
+<span id="line300"></span>                </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">post-entry</a>"&gt;</span><span>
+<span id="line301"></span>                    </span><span>&lt;<span class="start-tag">p</span> <span class="attribute-name">class</span>="<a class="attribute-value">editors-note</a>"&gt;</span><span>After Shelly wrote this post, Webucator, a company that provides </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.webucator.com/programming/python.cfm">https://www.webucator.com/programming/python.cfm</a>"&gt;</span><span>Python training</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>, volunteered to create solutions for these projects. They<span class="entity"><span>&amp;</span>#8217;</span>ve made </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.youtube.com/playlist?list=PLhP5GzqIk6qsYjU_3tod0nqoWGXlq9RvF">https://www.youtube.com/playlist?list=PLhP5GzqIk6qsYjU_3tod0nqoWGXlq9RvF</a>"&gt;</span><span>a series of videos</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> that<span class="entity"><span>&amp;</span>#8217;</span>ll help you out if you need it. </span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line302"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Learning
+ a new programming language is both the most exciting and the most 
+humbling experience. For me, that language has recently been Python, 
+which </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/03/20/five-data-scraping-tools-for-would-be-data-journalists/">http://knightlab.northwestern.edu/2014/03/20/five-data-scraping-tools-for-would-be-data-journalists/</a>"&gt;</span><span>I’ve been learning over these last few months</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>.
+ And as every coder knows, the best way to learn a language is to apply 
+it in a project. But what happens when you don’t have a giant, ambitious
+ project? For me, that’s where the sandbox comes in. Why not build a few
+ sandcastles before piling up the rocks to our grand ol’ castle?</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line303"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>With
+ that in mind, here are five mini programming projects to get you 
+started on learning Python. The exact solutions aren’t here — that’s 
+where the most important learning comes into play — but there are hints 
+as to the concepts that you should be using. And remember, </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/03/13/googling-for-code-solutions-can-be-tricky-heres-how-to-get-started/">http://knightlab.northwestern.edu/2014/03/13/googling-for-code-solutions-can-be-tricky-heres-how-to-get-started/</a>"&gt;</span><span>Google is your friend!</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line304"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>1. Dice Rolling Simulator</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line305"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>The
+ Goal: Like the title suggests, this project involves writing a program 
+that simulates rolling dice. When the program runs, it will randomly 
+choose a number between 1 and 6. (Or whatever other integer you prefer —
+ the number of sides on the die is up to you.) The program will print 
+what that number is. It should then ask you if you’d like to roll again.
+ For this project, you’ll need to set the min and max number that your 
+dice can produce. For the average die, that means a minimum of 1 and a 
+maximum of 6. You’ll also want a function that randomly grabs a number 
+within that range and prints it.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line306"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">em</span>&gt;</span><span>Concepts to keep in mind:</span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line307"></span></span><span>&lt;<span class="start-tag">ul</span>&gt;</span><span>
+<span id="line308"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Random</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line309"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Integer</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line310"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Print</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line311"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>While Loops</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line312"></span></span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line313"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>A
+ good project for beginners, this project will help establish a solid 
+foundation for basic concepts. And if you already have programming 
+experience, chances are that the concepts used in this project aren’t 
+completely foreign to you. Print, for example, is similar to 
+Javascript’s console.log.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line314"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>2. Guess the Number</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line315"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>The
+ Goal: Similar to the first project, this project also uses the random 
+module in Python. The program will first randomly generate a number 
+unknown to the user. The user needs to guess what that number is. (In 
+other words, the user needs to be able to </span><span>&lt;<span class="start-tag">i</span>&gt;</span><span>input</span><span>&lt;/<span class="end-tag">i</span>&gt;</span><span>
+ information.) If the user’s guess is wrong, the program should return 
+some sort of indication as to how wrong (e.g. The number is too high or 
+too low). If the user guesses correctly, a positive indication should 
+appear. You’ll need functions to check if the user input is an actual 
+number, to see the difference between the inputted number and the 
+randomly generated numbers, and to then compare the numbers.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line316"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">em</span>&gt;</span><span>Concepts to keep in mind:</span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line317"></span></span><span>&lt;<span class="start-tag">ul</span>&gt;</span><span>
+<span id="line318"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Random function</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line319"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Variables</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line320"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Integers</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line321"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Input/Output</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line322"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Print</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line323"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>While loops</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line324"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>If/Else statements</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line325"></span></span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line326"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Jumping
+ off the first project, this project continues to build up the base 
+knowledge and introduces user-inputted data at its very simplest. With 
+user input, we start to get into a little bit of variability.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line327"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>3. Mad Libs Generator</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line328"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>The Goal: Inspired by </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://suyeon-son.com/sandbox/mad-libs.html">http://suyeon-son.com/sandbox/mad-libs.html</a>"&gt;</span><span>Summer Son’s Mad Libs project</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+ with Javascript. The program will first prompt the user for a series of
+ inputs a la Mad Libs. For example, a singular noun, an adjective, etc. 
+Then, once all the information has been inputted, the program will take 
+that data and place them into a premade story template. You’ll need 
+prompts for user input, and to then print out the full story at the end 
+with the input included.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line329"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">em</span>&gt;</span><span>Concepts to keep in mind:</span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line330"></span></span><span>&lt;<span class="start-tag">ul</span>&gt;</span><span>
+<span id="line331"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Strings</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line332"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Variables</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line333"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Concatenation</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line334"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Print</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line335"></span></span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line336"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>A
+ pretty fun beginning project that gets you thinking about how to 
+manipulate userinputted data. Compared to the prior projects, this 
+project focuses far more on strings and concatenating. Have some fun 
+coming up with some wacky stories for this!</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line337"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>4. TextBased Adventure Game</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line338"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>The Goal: Remember </span><span>&lt;<span class="start-tag">i</span>&gt;</span><span>Adventure</span><span>&lt;/<span class="end-tag">i</span>&gt;</span><span>?
+ Well, we’re going to build a more basic version of that. A complete 
+text game, the program will let users move through rooms based on user 
+input and get descriptions of each room. To create this, you’ll need to 
+establish the directions in which the user can move, a way to track how 
+far the user has moved (and therefore which room he/she is in), and to 
+print out a description. You’ll also need to set limits for how far the 
+user can move. In other words, create “walls” around the rooms that tell
+ the user, “You can’t move further in this direction.”</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line339"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">em</span>&gt;</span><span>Concepts to keep in mind:</span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line340"></span></span><span>&lt;<span class="start-tag">ul</span>&gt;</span><span>
+<span id="line341"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Strings</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line342"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Variables</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line343"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Input/Output</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line344"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>If/Else Statements</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line345"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Print</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line346"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>List</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line347"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Integers</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line348"></span></span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line349"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>The
+ tricky parts here will involve setting up the directions and keeping 
+track of just how far the user has “walked” in the game. I suggest 
+sticking to just a few basic descriptions or rooms, perhaps 6 at most. 
+This project also continues to build on using userinputted data. It can 
+be a relatively basic game, but if you want to build this into a vast, 
+complex word, the coding will get substantially harder, especially if 
+you want your user to start interacting with actual objects within the 
+game. That complexity could be great, if you’d like to make this into a 
+longterm project. *Hint hint.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line350"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>5. Hangman</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line351"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>The
+ Goal: Despite the name, the actual “hangman” part isn’t necessary. The 
+main goal here is to create a sort of “guess the word” game. The user 
+needs to be able to input letter guesses. A limit should also be set on 
+how many guesses they can use. This means you’ll need a way to grab a 
+word to use for guessing. (This can be grabbed from a pre-made list. No 
+need to get too fancy.) You will also need functions to check if the 
+user has actually inputted a single letter, to check if the inputted 
+letter is in the hidden word (and if it is, how many times it appears), 
+to print letters, and a counter variable to limit guesses.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line352"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">em</span>&gt;</span><span>Concepts to keep in mind:</span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line353"></span></span><span>&lt;<span class="start-tag">ul</span>&gt;</span><span>
+<span id="line354"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Random</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line355"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Variables</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line356"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Boolean</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line357"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Input and Output</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line358"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Integer</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line359"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Char</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line360"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>String</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line361"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Length</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line362"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>Print</span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line363"></span></span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line364"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Likely
+ the most complex project on this list (well, depending on just how 
+intense you went with the adventure text game), the Hangman project 
+compiles the prior concepts and takes them a step further. Here, 
+outcomes are not only determined based on user-inputted data, that data 
+needs to be parsed through, compared, and then either accepted or 
+rejected. If you want to take this project a step further, set up a 
+hangman image that changes!</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line365"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">sharedaddy sd-sharing-enabled</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">robots-nocontent sd-block sd-social sd-social-icon sd-sharing</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">h3</span> <span class="attribute-name">class</span>="<a class="attribute-value">sd-title</a>"&gt;</span><span>Share this:</span><span>&lt;/<span class="end-tag">h3</span>&gt;</span><span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">sd-content</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">ul</span>&gt;</span><span></span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">share-twitter</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>" <span class="attribute-name">data-shared</span>="<a class="attribute-value">sharing-twitter-5602</a>" <span class="attribute-name">class</span>="<a class="attribute-value">share-twitter sd-button share-icon no-text</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/?share=twitter">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/?share=twitter</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Click to share on Twitter</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">sharing-screen-reader-text</a>"&gt;</span><span>Click to share on Twitter (Opens in new window)</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">share-facebook</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>" <span class="attribute-name">data-shared</span>="<a class="attribute-value">sharing-facebook-5602</a>" <span class="attribute-name">class</span>="<a class="attribute-value">share-facebook sd-button share-icon no-text</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/?share=facebook">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/?share=facebook</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Click to share on Facebook</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">sharing-screen-reader-text</a>"&gt;</span><span>Click to share on Facebook (Opens in new window)</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">share-google-plus-1</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>" <span class="attribute-name">data-shared</span>="<a class="attribute-value">sharing-google-5602</a>" <span class="attribute-name">class</span>="<a class="attribute-value">share-google-plus-1 sd-button share-icon no-text</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/?share=google-plus-1">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/?share=google-plus-1</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Click to share on Google+</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">sharing-screen-reader-text</a>"&gt;</span><span>Click to share on Google+ (Opens in new window)</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">share-end</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line366"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>='<a class="attribute-value">jp-relatedposts</a>' <span class="attribute-name">class</span>='<a class="attribute-value">jp-relatedposts</a>' &gt;</span><span>
+<span id="line367"></span>	</span><span>&lt;<span class="start-tag">h3</span> <span class="attribute-name">class</span>="<a class="attribute-value">jp-relatedposts-headline</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">em</span>&gt;</span><span>Related</span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">h3</span>&gt;</span><span>
+<span id="line368"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line369"></span>
+<span id="line370"></span>									</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">teaser</a>"&gt;</span><span>
+<span id="line371"></span>					</span><span>&lt;<span class="start-tag">h3</span>&gt;</span><span></span><span>&lt;<span class="start-tag">span</span>&gt;</span><span>Like what you see?</span><span class="error" title="End tag “h3” seen, but there were open elements.">&lt;/<span class="end-tag">h3</span>&gt;</span><span>
+<span id="line372"></span>					</span><span>&lt;<span class="start-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/about/">http://knightlab.northwestern.edu/about/</a>"&gt;</span><span>Northwestern University Knight Lab</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> advances news media innovation through exploration, experimentation and education. The Lab's </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://projects.knightlab.com/">http://projects.knightlab.com/</a>"&gt;</span><span>free publishing tools</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> help to make information more meaningful and promote quality storytelling on the Internet.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line373"></span>				</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line374"></span>                    
+<span id="line375"></span>                    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">author-meta</a>"&gt;</span><span>
+<span id="line376"></span>						</span><span>&lt;<span class="start-tag">p</span> <span class="attribute-name">class</span>="<a class="attribute-value">label</a>"&gt;</span><span>About the author</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line377"></span>                        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">about-author</a>"&gt;</span><span>About                            </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">meta-prep meta-prep-author</a>"&gt;</span><span>Posted on</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">class</span>="<a class="attribute-value">posted</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/">http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">4:39 pm</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">bookmark</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">timestamp</a>"&gt;</span><span>June 5, 2014</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">meta-sep</a>"&gt;</span><span>Posted by</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/author/shellytan/">http://knightlab.northwestern.edu/author/shellytan/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Posts by Shelly Tan</a>" <span class="attribute-name">class</span>="<a class="attribute-value">author url fn</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">author</a>"&gt;</span><span>Shelly Tan</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>                        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line378"></span>                                                                        </span><span>&lt;<span class="start-tag">img</span> <span class="attribute-name">alt</span>='<a class="attribute-value"></a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://2.gravatar.com/avatar/8fb60163ec789f061b1515e25f6e1042?s=80&amp;d=mm&amp;r=g">http://2.gravatar.com/avatar/8fb60163ec789f061b1515e25f6e1042?s=80<span class="entity"><span>&amp;</span>#038;</span>d=mm<span class="entity"><span>&amp;</span>#038;</span>r=g</a>' <span class="attribute-name">srcset</span>='<a class="attribute-value">http://2.gravatar.com/avatar/8fb60163ec789f061b1515e25f6e1042?s=160<span class="entity"><span>&amp;</span>amp;</span>d=mm<span class="entity"><span>&amp;</span>amp;</span>r=g 2x</a>' <span class="attribute-name">class</span>='<a class="attribute-value">avatar avatar-80 photo</a>' <span class="attribute-name">height</span>='<a class="attribute-value">80</a>' <span class="attribute-name">width</span>='<a class="attribute-value">80</a>' <span>/</span>&gt;</span><span>                                                </span><span>&lt;<span class="start-tag">h4</span>&gt;</span><span>Shelly Tan</span><span>&lt;/<span class="end-tag">h4</span>&gt;</span><span>
+<span id="line379"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>Designer, Journalism and Art Theory and Practice (2014)</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line380"></span></span><span>&lt;<span class="start-tag">ul</span>&gt;</span><span>
+<span id="line381"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>
+<span id="line382"></span></span><span>&lt;<span class="start-tag">em</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-twitter icon-large</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://twitter.com/tan_shelly">http://twitter.com/tan_shelly</a>"&gt;</span><span>@tan_shelly</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;<span class="start-tag">br</span>&gt;</span><span>
+<span id="line383"></span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line384"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>
+<span id="line385"></span></span><span>&lt;<span class="start-tag">em</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-envelope icon-large</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="mailto:contact.shelly.tan@gmail.com">mailto:contact.shelly.tan@gmail.com</a>"&gt;</span><span>contact.shelly.tan@gmail.com</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line386"></span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line387"></span></span><span>&lt;<span class="start-tag">li</span>&gt;</span><span>
+<span id="line388"></span></span><span>&lt;<span class="start-tag">em</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-external-link icon-large</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">em</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.shellytan.com/">http://www.shellytan.com</a>"&gt;</span><span>Personal Website</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line389"></span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line390"></span></span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line391"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Designer interested in information architecture and user-oriented experiences. Former intern at NPR Visuals.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>                        
+<span id="line392"></span>                     </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of #author-meta --&gt;</span><span>
+<span id="line393"></span>
+<span id="line394"></span>                    					</span><span>&lt;<span class="start-tag">p</span> <span class="attribute-name">class</span>="<a class="attribute-value">post-meta meta-bottom</a>"&gt;</span><span>TAGGED <span class="entity"><span>&amp;</span>nbsp;</span>  </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/tag/learn/">http://knightlab.northwestern.edu/tag/learn/</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">tag</a>"&gt;</span><span>learn</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/tag/python/">http://knightlab.northwestern.edu/tag/python/</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">tag</a>"&gt;</span><span>python</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line395"></span>                </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of .post-entry --&gt;</span><span>
+<span id="line396"></span>
+<span id="line397"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">post-edit</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line398"></span>            </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of #post-5602 --&gt;</span><span>
+<span id="line399"></span>
+<span id="line400"></span>			
+<span id="line401"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">disqus_thread</a>"&gt;</span><span>
+<span id="line402"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-content</a>"&gt;</span><span>
+<span id="line403"></span>
+<span id="line404"></span>
+<span id="line405"></span>            </span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comments</a>"&gt;</span><span>
+<span id="line406"></span>                    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1729</a>"&gt;</span><span>
+<span id="line407"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1729</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line408"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1729</a>"&gt;</span><span>
+<span id="line409"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1729</a>"&gt;</span><span>Van Helmont</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line410"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line411"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line412"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1729</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line413"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1729</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Interesting! I<span class="entity"><span>&amp;</span>#8217;</span>ve already started! I find it very useful for acquiring early practice. Thanks!</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line414"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line415"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line416"></span>
+<span id="line417"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line418"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1731</a>"&gt;</span><span>
+<span id="line419"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1731</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line420"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1731</a>"&gt;</span><span>
+<span id="line421"></span>                </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1731</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/">http://knightlab.northwestern.edu/</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>"&gt;</span><span>Northwestern University Knight</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line422"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line423"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line424"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1731</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line425"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1731</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Awesome! Let us know how it goes.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line426"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line427"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line428"></span>
+<span id="line429"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line430"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1733</a>"&gt;</span><span>
+<span id="line431"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1733</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line432"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1733</a>"&gt;</span><span>
+<span id="line433"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1733</a>"&gt;</span><span>Sarah Wooller</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line434"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line435"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line436"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1733</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line437"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1733</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>thanks I wanted some suggestions for my son and hangman is a great idea.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line438"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line439"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line440"></span>
+<span id="line441"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line442"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1735</a>"&gt;</span><span>
+<span id="line443"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1735</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line444"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1735</a>"&gt;</span><span>
+<span id="line445"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1735</a>"&gt;</span><span>PETZ</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line446"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line447"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line448"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1735</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line449"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1735</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>I just wrote the dice program as my first bit of python coding, and I<span class="entity"><span>&amp;</span>#8217;</span>m
+ really digging it so far. For future readers: if you want to make it a 
+bit more challenging, have the program accept command line arguments for
+ number of sides on the dice and how many times to roll it. I<span class="entity"><span>&amp;</span>#8217;</span>ll be tackling the other four challenges soon.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line450"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line451"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line452"></span>
+<span id="line453"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line454"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1738</a>"&gt;</span><span>
+<span id="line455"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1738</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line456"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1738</a>"&gt;</span><span>
+<span id="line457"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1738</a>"&gt;</span><span>Imaculate</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line458"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line459"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line460"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1738</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line461"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1738</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Awesome!</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line462"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line463"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line464"></span>
+<span id="line465"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line466"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1739</a>"&gt;</span><span>
+<span id="line467"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1739</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line468"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1739</a>"&gt;</span><span>
+<span id="line469"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1739</a>"&gt;</span><span>Exist</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line470"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line471"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line472"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1739</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line473"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1739</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>I
+ just wrote the dice program and my suggestion if you want to improve 
+even more try to give the user a chance to determine whether they want 
+to reroll the dice or not. and PETZ nice idea! I<span class="entity"><span>&amp;</span>#8217;</span>m gonna try it.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line474"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line475"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line476"></span>
+<span id="line477"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line478"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1744</a>"&gt;</span><span>
+<span id="line479"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1744</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line480"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1744</a>"&gt;</span><span>
+<span id="line481"></span>                </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1744</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/">http://knightlab.northwestern.edu/</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>"&gt;</span><span>Northwestern University Knight</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line482"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line483"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line484"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1744</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line485"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1744</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Nice! Thanks for reading.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line486"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line487"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line488"></span>
+<span id="line489"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line490"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1745</a>"&gt;</span><span>
+<span id="line491"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1745</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line492"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1745</a>"&gt;</span><span>
+<span id="line493"></span>                </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1745</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/">http://knightlab.northwestern.edu/</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>"&gt;</span><span>Northwestern University Knight</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line494"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line495"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line496"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1745</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line497"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1745</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Great suggestion. Thanks!</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line498"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line499"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line500"></span>
+<span id="line501"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line502"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1747</a>"&gt;</span><span>
+<span id="line503"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1747</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line504"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1747</a>"&gt;</span><span>
+<span id="line505"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1747</a>"&gt;</span><span>beastwork</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line506"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line507"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line508"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1747</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line509"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1747</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>I
+ just finished the projects and for a newb like me this was a lot of 
+fun.  It really helped me reinforce some skills and by the time I got to
+ the Project 5, I was able to breeze right through.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line510"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line511"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line512"></span>
+<span id="line513"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line514"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1748</a>"&gt;</span><span>
+<span id="line515"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1748</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line516"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1748</a>"&gt;</span><span>
+<span id="line517"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1748</a>"&gt;</span><span>Pou Lin</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line518"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line519"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line520"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1748</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line521"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1748</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Cool
+ projects, it helped me to make my base strong and also enjoyed creating
+ it.. And keep me going further ^__^ thank you Shelly Tan 🙂</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line522"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line523"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line524"></span>
+<span id="line525"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line526"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1752</a>"&gt;</span><span>
+<span id="line527"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1752</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line528"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1752</a>"&gt;</span><span>
+<span id="line529"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1752</a>"&gt;</span><span>rolika</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line530"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line531"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line532"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1752</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line533"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1752</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>I
+ wrote the guess-the-number programm, but it is some more challenging to
+ write the opposite, when the computer guesses your number!</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line534"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line535"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line536"></span>
+<span id="line537"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line538"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-29140</a>"&gt;</span><span>
+<span id="line539"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-29140</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line540"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-29140</a>"&gt;</span><span>
+<span id="line541"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-29140</a>"&gt;</span><span>Tyler Leadbetter</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line542"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line543"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line544"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-29140</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line545"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-29140</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>I need the code for the hangman one</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line546"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line547"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line548"></span>
+<span id="line549"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line550"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-29141</a>"&gt;</span><span>
+<span id="line551"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-29141</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line552"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-29141</a>"&gt;</span><span>
+<span id="line553"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-29141</a>"&gt;</span><span>TJmaxal</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line554"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line555"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line556"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-29141</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line557"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-29141</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Great prompts!</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line558"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line559"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line560"></span>
+<span id="line561"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line562"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-29146</a>"&gt;</span><span>
+<span id="line563"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-29146</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line564"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-29146</a>"&gt;</span><span>
+<span id="line565"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-29146</a>"&gt;</span><span>Berat Ademi</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line566"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line567"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line568"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-29146</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line569"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-29146</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Those are some nice projects 😀 I wrote my first python code on the die rolling simulator. If you<span class="entity"><span>&amp;</span>#8217;</span>d
+ like you could also add an advanced part there that asks the user to 
+programm a simulator that asks for zhe number of dices used ;P</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line570"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line571"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line572"></span>
+<span id="line573"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line574"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-29157</a>"&gt;</span><span>
+<span id="line575"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-29157</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line576"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-29157</a>"&gt;</span><span>
+<span id="line577"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-29157</a>"&gt;</span><span>pranjal saxena</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line578"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line579"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line580"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-29157</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line581"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-29157</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>I just successfully till 2nd project and working on 4th one that seems to be very interesting! Thanks buddy <span class="entity"><span>&amp;</span>#8230;</span>.hope for the new projects<span class="entity"><span>&amp;</span>#8230;</span>please mailed me on </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="mailto:pranjal.saxena2012@gmail.com">mailto:pranjal.saxena2012@gmail.com</a>"&gt;</span><span>pranjal.saxena2012@gmail.com</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> thank you.  🙂</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line582"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line583"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line584"></span>
+<span id="line585"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line586"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-29158</a>"&gt;</span><span>
+<span id="line587"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-29158</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line588"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-29158</a>"&gt;</span><span>
+<span id="line589"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-29158</a>"&gt;</span><span>Azurasy</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line590"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line591"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line592"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-29158</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line593"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-29158</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Thanks for the text based adventure idea, it was actually fun to make. here my code if you want to try it: </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://repl.it/CXcQ/2">https://repl.it/CXcQ/2</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>"&gt;</span><span>https://repl.it/CXcQ/2</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line594"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line595"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line596"></span>
+<span id="line597"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line598"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-29159</a>"&gt;</span><span>
+<span id="line599"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-29159</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line600"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-29159</a>"&gt;</span><span>
+<span id="line601"></span>                </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-29159</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/">http://knightlab.northwestern.edu/</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>"&gt;</span><span>Knight Lab</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line602"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line603"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line604"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-29159</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line605"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-29159</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Nice! Glad it was helpful.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line606"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line607"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line608"></span>
+<span id="line609"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line610"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment odd alt thread-odd thread-alt depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-29164</a>"&gt;</span><span>
+<span id="line611"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-29164</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line612"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-29164</a>"&gt;</span><span>
+<span id="line613"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-29164</a>"&gt;</span><span>Ben Third</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line614"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line615"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line616"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-29164</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line617"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-29164</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>I
+ really love this article! As a beginner programmer, this article was 
+very useful for me. I used dice simulator as the project I wanted to 
+start with. Initially, it would just roll one specific die when I ran 
+it. The complete program, however, which took me about 5 hours to make, 
+was much better. It starts by asking if you want to roll a d6, d8, d10, 
+d12, d20, or d100. It then takes your input, case insensitive, and rolls
+ the respective die. It then asks if you would like to roll again. If Y,
+ it asks the dice-rolling question again. If N, it asks would you like 
+to close the program. If N, it takes you back to the die roll. If Y, it 
+asks for an <span class="entity"><span>&amp;</span>#8216;</span>Enter<span class="entity"><span>&amp;</span>#8217;</span> prompt to close the program. Fully loops. 🙂 Very fun program.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line618"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>I could use a tip for how I could use input to multiply the amount for dice rolled, but have them all show up in on like this:</span><span>&lt;<span class="start-tag">br</span> <span>/</span>&gt;</span><span>
+<span id="line619"></span>4 + 6 + 4 + 1 = 15</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line620"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>Any ideas, anyone?</span><span>&lt;<span class="start-tag">br</span> <span>/</span>&gt;</span><span>
+<span id="line621"></span>Message me here, </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.facebook.com/ben3rd/">https://www.facebook.com/ben3rd/</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">nofollow</a>"&gt;</span><span>https://www.facebook.com/ben3rd/</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line622"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line623"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line624"></span>
+<span id="line625"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line626"></span>    </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-29165</a>"&gt;</span><span>
+<span id="line627"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-29165</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line628"></span>            </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-29165</a>"&gt;</span><span>
+<span id="line629"></span>                </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-29165</a>"&gt;</span><span>srushtee satardey</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line630"></span>            </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line631"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line632"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-29165</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line633"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-29165</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>i
+ just wrote mad libs program and i have improved it also by having a 
+list of all the prompts like list of adverbs and nouns and etc and the 
+when i call the function the program randomly generates the output</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line634"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line635"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line636"></span>
+<span id="line637"></span>    </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span></span><span class="comment">&lt;!-- #comment-## --&gt;</span><span>
+<span id="line638"></span>            </span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line639"></span>
+<span id="line640"></span>
+<span id="line641"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line642"></span>
+<span id="line643"></span>    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line644"></span>
+<span id="line645"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line646"></span>var disqus_url = 'http://knightlab.northwestern.edu/2014/06/05/five-mini-programming-projects-for-the-python-beginner/';
+<span id="line647"></span>var disqus_identifier = '5602 http://knightlab.northwestern.edu/?p=5602';
+<span id="line648"></span>var disqus_container_id = 'disqus_thread';
+<span id="line649"></span>var disqus_shortname = 'knightlabblog';
+<span id="line650"></span>var disqus_title = "Five mini programming projects for the Python beginner";
+<span id="line651"></span>var disqus_config_custom = window.disqus_config;
+<span id="line652"></span>var disqus_config = function () {
+<span id="line653"></span>    /*
+<span id="line654"></span>    All currently supported events:
+<span id="line655"></span>    onReady: fires when everything is ready,
+<span id="line656"></span>    onNewComment: fires when a new comment is posted,
+<span id="line657"></span>    onIdentify: fires when user is authenticated
+<span id="line658"></span>    */
+<span id="line659"></span>    
+<span id="line660"></span>    
+<span id="line661"></span>    this.language = '';
+<span id="line662"></span>        this.callbacks.onReady.push(function () {
+<span id="line663"></span>
+<span id="line664"></span>        // sync comments in the background so we don't block the page
+<span id="line665"></span>        var script = document.createElement('script');
+<span id="line666"></span>        script.async = true;
+<span id="line667"></span>        script.src = '?cf_action=sync_comments&amp;post_id=5602';
+<span id="line668"></span>
+<span id="line669"></span>        var firstScript = document.getElementsByTagName('script')[0];
+<span id="line670"></span>        firstScript.parentNode.insertBefore(script, firstScript);
+<span id="line671"></span>    });
+<span id="line672"></span>    
+<span id="line673"></span>    if (disqus_config_custom) {
+<span id="line674"></span>        disqus_config_custom.call(this);
+<span id="line675"></span>    }
+<span id="line676"></span>};
+<span id="line677"></span>
+<span id="line678"></span>(function() {
+<span id="line679"></span>    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+<span id="line680"></span>    dsq.async = true;
+<span id="line681"></span>    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+<span id="line682"></span>    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+<span id="line683"></span>})();
+<span id="line684"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line685"></span>
+<span id="line686"></span>
+<span id="line687"></span>        
+<span id="line688"></span>        
+<span id="line689"></span>	    
+<span id="line690"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of #content --&gt;</span><span>
+<span id="line691"></span>
+<span id="line692"></span>    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of #wrapper --&gt;</span><span>
+<span id="line693"></span>      </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of #container --&gt;</span><span>
+<span id="line694"></span>    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end of #content-wrapper --&gt;</span><span>
+<span id="line695"></span>  </span><span>&lt;<span class="start-tag">footer</span>&gt;</span><span>
+<span id="line696"></span>	  </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">about-knightlab</a>"&gt;</span><span>
+<span id="line697"></span>			</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">knightlab-logo-column</a>"&gt;</span><span>
+<span id="line698"></span>				</span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/">http://knightlab.northwestern.edu</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">img</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/uploads/2014/12/logo_stacked.png">http://knightlab.northwestern.edu/wp-content/uploads/2014/12/logo_stacked.png</a>" <span class="attribute-name">class</span>="<a class="attribute-value">img-responsive</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line699"></span>				</span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">class</span>="<a class="attribute-value">social list-inline</a>"&gt;</span><span>
+<span id="line700"></span>				   </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.twitter.com/knightlab">http://www.twitter.com/knightlab</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab on Twitter</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-twitter</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line701"></span>					</span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.facebook.com/knightlab">https://www.facebook.com/knightlab</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab on Facebook</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-facebook</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line702"></span>					</span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://github.com/NUKnightLab/">https://github.com/NUKnightLab/</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab on GitHub</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">icon-github</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line703"></span>				</span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line704"></span>
+<span id="line705"></span>            </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line706"></span>			</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">knightlab-description</a>"&gt;</span><span>
+<span id="line707"></span>			</span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>The </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">title</span>="<a class="attribute-value">Northwestern University</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.northwestern.edu/">http://www.northwestern.edu/</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>"&gt;</span><span>Northwestern University</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+ Knight Lab is a team of technologists and journalists working at 
+advancing news media innovation through exploration and experimentation.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line708"></span>			</span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>A joint initiative of the </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.mccormick.northwestern.edu/">http://www.mccormick.northwestern.edu/</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>"&gt;</span><span>Robert R. McCormick School of Engineering and Applied Science</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> and the</span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.medill.northwestern.edu/">http://www.medill.northwestern.edu/</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>"&gt;</span><span> Medill School of Journalism, Media, Integrated Marketing Communications</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>.</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">img</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/uploads/2014/12/Logos-Horizontal.png">http://knightlab.northwestern.edu/wp-content/uploads/2014/12/Logos-Horizontal.png</a>" <span class="attribute-name">class</span>="<a class="attribute-value">img-responsive logos</a>"&gt;</span><span>
+<span id="line709"></span>			</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line710"></span>		  </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">copyright</a>"&gt;</span><span>
+<span id="line711"></span>				</span><span>&lt;<span class="start-tag">address</span> <span class="attribute-name">itemscope</span>="<a class="attribute-value"></a>" <span class="attribute-name">itemtype</span>="<a class="attribute-value">http://data-vocabulary.org/Organization</a>"&gt;</span><span>
+<span id="line712"></span>					</span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">style</span>="<a class="attribute-value">display:none;</a>" <span class="attribute-name">itemprop</span>="<a class="attribute-value">name</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab | Advancing news media innovation through exploration and experimentation.</a>" <span class="attribute-name">class</span>="<a class="attribute-value">address-name</a>"&gt;</span><span>Knight Lab</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line713"></span>					</span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">itemprop</span>="<a class="attribute-value">tel</a>" <span class="attribute-name">class</span>="<a class="attribute-value">tel</a>"&gt;</span><span>(847) 467-4971</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line714"></span>					</span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">itemprop</span>="<a class="attribute-value">address</a>" <span class="attribute-name">itemscope</span>="<a class="attribute-value"></a>" <span class="attribute-name">itemtype</span>="<a class="attribute-value">http://data-vocabulary.org/Address</a>" <span class="attribute-name">class</span>="<a class="attribute-value">address</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">itemprop</span>="<a class="attribute-value">street-address</a>" <span class="attribute-name">class</span>="<a class="attribute-value">street-address</a>"&gt;</span><span>1845 Sheridan Road</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">room-num</a>"&gt;</span><span>Fisk #109 <span class="entity"><span>&amp;</span>amp;</span> #111</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span> 
+<span id="line715"></span>				  </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">address-group</a>"&gt;</span><span>
+<span id="line716"></span>					</span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">itemprop</span>="<a class="attribute-value">locality</a>"&gt;</span><span>Evanston,</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">itemprop</span>="<a class="attribute-value">region</a>"&gt;</span><span>IL</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">itemprop</span>="<a class="attribute-value">postal-code</a>"&gt;</span><span>60208 </span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line717"></span>					</span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">style</span>="<a class="attribute-value">display:none;</a>" <span class="attribute-name">itemprop</span>="<a class="attribute-value">geo</a>" <span class="attribute-name">itemscope</span>="<a class="attribute-value"></a>" <span class="attribute-name">itemtype</span>="<a class="attribute-value">http://www.data-vocabulary.org/Geo/</a>" <span class="attribute-name">class</span>="<a class="attribute-value">geo</a>"&gt;</span><span>Latitude: </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">itemprop</span>="<a class="attribute-value">latitude</a>"&gt;</span><span>42.056893</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;<span class="start-tag">br</span>&gt;</span><span>Longitude: </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">itemprop</span>="<a class="attribute-value">longitude</a>"&gt;</span><span>-87.676735</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">style</span>="<a class="attribute-value">display:none;</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/">http://knightlab.northwestern.edu</a>" <span class="attribute-name">itemprop</span>="<a class="attribute-value">url</a>" <span class="attribute-name">class</span>="<a class="attribute-value">url</a>"&gt;</span><span>Northwesten University Knight Lab | Advancing media innovation through exploration and experimentation.</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line718"></span>				</span><span class="error" title="End tag “address” seen, but there were open elements.">&lt;/<span class="end-tag">address</span>&gt;</span><span>
+<span id="line719"></span>				<span class="entity"><span>&amp;</span>copy;</span> Copyright  2016            </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">title</span>="<a class="attribute-value">Knight Lab</a>"&gt;</span><span>
+<span id="line720"></span>                 Northwestern University
+<span id="line721"></span>              </span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line722"></span>          </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line723"></span>          </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line724"></span>        </span><span class="error" title="Stray end tag “div”.">&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line725"></span>      </span><span class="error" title="Stray end tag “div”.">&lt;/<span class="end-tag">div</span>&gt;</span><span>            </span><span class="error" title="Stray end tag “div”.">&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line726"></span>        </span><span class="error" title="Stray end tag “div”.">&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span class="comment">&lt;!-- end #footer-wrapper --&gt;</span><span>
+<span id="line727"></span>  </span><span>&lt;/<span class="end-tag">footer</span>&gt;</span><span>
+<span id="line728"></span>          </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line729"></span>        // </span><span>&lt;!</span><span>[CDATA[
+<span id="line730"></span>        var disqus_shortname = 'knightlabblog';
+<span id="line731"></span>        (function () {
+<span id="line732"></span>            var nodes = document.getElementsByTagName('span');
+<span id="line733"></span>            for (var i = 0, url; i </span><span>&lt; </span><span>nodes.length; i++) {
+<span id="line734"></span>                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+<span id="line735"></span>                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+<span id="line736"></span>                    url = nodes[i].parentNode.href.split('#', 1);
+<span id="line737"></span>                    if (url.length == 1) { url = url[0]; }
+<span id="line738"></span>                    else { url = url[1]; }
+<span id="line739"></span>                    nodes[i].parentNode.href = url + '#disqus_thread';
+<span id="line740"></span>                }
+<span id="line741"></span>            }
+<span id="line742"></span>            var s = document.createElement('script');
+<span id="line743"></span>            s.async = true;
+<span id="line744"></span>            s.type = 'text/javascript';
+<span id="line745"></span>            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+<span id="line746"></span>            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+<span id="line747"></span>        }());
+<span id="line748"></span>        // ]]&gt;
+<span id="line749"></span>        </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line750"></span>        	</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">style</span>="<a class="attribute-value">display:none</a>"&gt;</span><span>
+<span id="line751"></span>	</span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">grofile-hash-map-8fb60163ec789f061b1515e25f6e1042</a>"&gt;</span><span>
+<span id="line752"></span>	</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line753"></span>	</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line754"></span>
+<span id="line755"></span>	</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line756"></span>		window.WPCOM_sharing_counts = 
+{"http:\/\/knightlab.northwestern.edu\/2014\/06\/05\/five-mini-programming-projects-for-the-python-beginner\/":5602};
+<span id="line757"></span>	</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line758"></span>		</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line759"></span>		var windowOpen;
+<span id="line760"></span>		jQuery(document.body).on('click', 'a.share-twitter', function() {
+<span id="line761"></span>			if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+<span id="line762"></span>				windowOpen.close();
+<span id="line763"></span>			}
+<span id="line764"></span>			windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+<span id="line765"></span>			return false;
+<span id="line766"></span>		});
+<span id="line767"></span>		</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line768"></span>				</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line769"></span>		var windowOpen;
+<span id="line770"></span>		jQuery(document.body).on('click', 'a.share-facebook', function() {
+<span id="line771"></span>			if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+<span id="line772"></span>				windowOpen.close();
+<span id="line773"></span>			}
+<span id="line774"></span>			windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+<span id="line775"></span>			return false;
+<span id="line776"></span>		});
+<span id="line777"></span>		</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line778"></span>				</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line779"></span>		var windowOpen;
+<span id="line780"></span>		jQuery(document.body).on('click', 'a.share-google-plus-1', function() {
+<span id="line781"></span>			if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+<span id="line782"></span>				windowOpen.close();
+<span id="line783"></span>			}
+<span id="line784"></span>			windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+<span id="line785"></span>			return false;
+<span id="line786"></span>		});
+<span id="line787"></span>		</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line788"></span>		</span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122">http://knightlab.northwestern.edu/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line789"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641">http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201641</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line790"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://s.gravatar.com/js/gprofiles.js?ver=2016Octaa">http://s.gravatar.com/js/gprofiles.js?ver=2016Octaa</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line791"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>'&gt;</span><span>
+<span id="line792"></span>/* </span><span>&lt;!</span><span>[CDATA[ */
+<span id="line793"></span>var WPGroHo = {"my_hash":""};
+<span id="line794"></span>/* ]]&gt; */
+<span id="line795"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line796"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.6.1">http://knightlab.northwestern.edu/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.6.1</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line797"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/themes/responsive/js/responsive-scripts.js?ver=1.2.1">http://knightlab.northwestern.edu/wp-content/themes/responsive/js/responsive-scripts.js?ver=1.2.1</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line798"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/themes/responsive/js/responsive-plugins.js?ver=1.1.1">http://knightlab.northwestern.edu/wp-content/themes/responsive/js/responsive-plugins.js?ver=1.1.1</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line799"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-includes/js/wp-embed.min.js?ver=4.6.1">http://knightlab.northwestern.edu/wp-includes/js/wp-embed.min.js?ver=4.6.1</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line800"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>'&gt;</span><span>
+<span id="line801"></span>/* </span><span>&lt;!</span><span>[CDATA[ */
+<span id="line802"></span>var sharing_js_options = {"lang":"en","counts":"1"};
+<span id="line803"></span>/* ]]&gt; */
+<span id="line804"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line805"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=4.3.1">http://knightlab.northwestern.edu/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=4.3.1</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line806"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://stats.wp.com/e-201641.js">http://stats.wp.com/e-201641.js</a>' <span class="attribute-name">async</span> <span class="attribute-name">defer</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line807"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>'&gt;</span><span>
+<span id="line808"></span>	_stq = window._stq || [];
+<span id="line809"></span>	_stq.push([ 'view', {v:'ext',j:'1:4.3.1',blog:'113266179',post:'5602',tz:'0',srv:'knightlab.northwestern.edu'} ]);
+<span id="line810"></span>	_stq.push([ 'clickTrackerInit', '113266179', '5602' ]);
+<span id="line811"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line812"></span>  </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>'&gt;</span><span>
+<span id="line813"></span>
+<span id="line814"></span>    var _gaq = _gaq || [];
+<span id="line815"></span>    _gaq.push(['_setAccount', 'UA-27829802-1']);
+<span id="line816"></span>    _gaq.push(['_trackPageview']);
+<span id="line817"></span>
+<span id="line818"></span>    (function() {
+<span id="line819"></span>      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+<span id="line820"></span>      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+<span id="line821"></span>      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+<span id="line822"></span>    })();
+<span id="line823"></span>
+<span id="line824"></span>  </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line825"></span>  </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:http://cdn.knightlab.com/libs/soundcite/latest/css/player.css">//cdn.knightlab.com/libs/soundcite/latest/css/player.css</a>' <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>'&gt;</span><span>
+<span id="line826"></span>  </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:http://cdn.knightlab.com/libs/soundcite/latest/js/soundcite.min.js">//cdn.knightlab.com/libs/soundcite/latest/js/soundcite.min.js</a>'&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line827"></span>
+<span id="line828"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>" <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://knightlab.northwestern.edu/wp-content/themes/responsive-kl-child-theme/scripts.js">http://knightlab.northwestern.edu/wp-content/themes/responsive-kl-child-theme/scripts.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line829"></span></span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
+<span id="line830"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span>
+<span id="line831"></span>
+<span id="line832"></span></span><span class="comment">&lt;!-- Dynamic page generated in 5.922 seconds. --&gt;</span><span>
+<span id="line833"></span></span><span class="comment">&lt;!-- Cached page generated by WP-Super-Cache on 2016-10-15 15:47:25 --&gt;</span><span>
+<span id="line834"></span>
+<span id="line835"></span></span><span class="comment">&lt;!-- Compression = gzip --&gt;</span><span></span></pre><menu type="context" id="actions"><menuitem id="goToLine" label="Go to Line…" accesskey="L"></menuitem><menuitem id="wrapLongLines" label="Wrap Long Lines" type="checkbox"></menuitem><menuitem id="highlightSyntax" label="Syntax Highlighting" type="checkbox" checked="true"></menuitem></menu></body></html>

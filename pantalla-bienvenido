@@ -17,7 +17,7 @@
 			
 			function redimensionarYDibujarCabecera() {
 				var canvas=document.getElementById('cabecera');
-				if (canvas.width < window.innerWidth) canvas.width = window.innerWidth;
+				canvas.width = document.getElementById('containerCabecera').clientWidth;
 				canvas.height = window.innerHeight+800;
 				if (canvas && canvas.getContext) {
 					var ctx = canvas.getContext("2d");
@@ -35,7 +35,7 @@
 					}
 					if(img.loaded) ctx.drawImage(img,innerWidth-2-380, -10);
 					else img.addEventListener('load', function(){ctx.drawImage(img,innerWidth-2-380, -10);})
-					if(img2.loaded) ctx.drawImage(img,innerWidth-2-380, -10);
+					if(img2.loaded) ctx.drawImage(img2,innerWidth-2-140, 15);
 					else img2.addEventListener('load', function(){ctx.drawImage(img2,innerWidth-2-140, 15);})
 				}
 			}
@@ -47,9 +47,14 @@
 	</head>
 	<body>
 
-	<canvas width= "200" height="200" id="cabecera"></canvas>
+	<div id='containerCabecera'>
+		<canvas width= "200" height="200" id="cabecera"></canvas>
+	</div>
 
 	<style type="text/css">
+		#containerCabecera{
+			width:100%;
+		}
 		h1 {text-decoration:underline;text-align:center }
 		p {font-family: arial, verdana; color: white;}
 		body {color:black;background-color: #; text-indent:0cm}
