@@ -17,8 +17,9 @@
 			
 			function redimensionarYDibujarCabecera() {
 				var canvas=document.getElementById('cabecera');
-				canvas.width = document.getElementById('containerCabecera').clientWidth;
+				// el orden de las siguientes dos líneas es importante
 				canvas.height = window.innerHeight+800;
+				canvas.width = document.getElementById('containerCabecera').clientWidth;
 				if (canvas && canvas.getContext) {
 					var ctx = canvas.getContext("2d");
 					// dibujos
