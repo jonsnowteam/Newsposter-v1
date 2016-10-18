@@ -68,9 +68,15 @@
 			background: radial-gradient(ellipse at center, #f6f8f9 0%,#f6f8f9 15%,#f5f7f9 40%,#e5ebee 66%,#d7dee3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#d7dee3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 		}
+		footer{
+			background-color: #014765;
+			display:block;
+			height:10px;
+		}
 	</style>
 	<div style="position:absolute; top:5px; left:10px; width:200px; height:200px; visibility:visible z-index:1"> 
 	<img src="LogoNewsPoster.jpg" width="206" height="60" ondragstart="return false;">
 	</div>
+	<footer></footer>
 	</body>
 </html>
